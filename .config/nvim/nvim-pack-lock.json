@@ -1,0 +1,29 @@
+{
+  "plugins": {
+    "black-metal-theme-neovim": {
+      "rev": "5d61bbd0ec3471c27168431dd2986cc77e28c848",
+      "src": "https://github.com/metalelf0/black-metal-theme-neovim"
+    },
+    "mason.nvim": {
+      "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "a9bb4d5f4276aa5cddc015faa3ecc5a7b5a26b14",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "728e031f6b11d03d1f0708b7dc4fb0f1d9c8a137",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "telescope.nvim": {
+      "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
+      "src": "https://github.com/nvim-telescope/telescope.nvim"
+    }
+  }
+}
