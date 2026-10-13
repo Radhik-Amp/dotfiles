@@ -1,0 +1,51 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "kitty-icat",
+        "source": "/home/radhik/.config/fastfetch/images/bird-classic.gif",
+        "width": 29,
+        "height": 18,
+        "padding": { "right": 2 },
+        "printRemaining": true
+    },
+    "display": {
+        "separator": " ",
+        "color": {
+            "keys": "white"
+        },
+        "size": {
+            "ndigits": 1
+        },
+        "percent": {
+            "color": {
+                "green": "93",
+                "yellow": "93",
+                "red": "91"
+            }
+        }
+    },
+    "modules": [
+        { "type": "custom", "format": "\u001b[38;2;214;72;112ma\u001b[38;2;208;69;109ml\u001b[38;2;201;67;106ml\u001b[38;2;195;64;103m \u001b[38;2;189;61;99ms\u001b[38;2;182;59;96my\u001b[38;2;176;56;93ms\u001b[38;2;170;54;90mt\u001b[38;2;163;51;87me\u001b[38;2;157;48;84mm\u001b[38;2;151;46;80ms\u001b[38;2;145;43;77m \u001b[38;2;138;40;74mn\u001b[38;2;132;38;71mo\u001b[38;2;126;35;68mm\u001b[38;2;119;33;65mi\u001b[38;2;113;30;61mn\u001b[38;2;107;27;58ma\u001b[38;2;100;25;55ml\u001b[38;2;94;22;52m.\u001b[0m" },
+        { "type": "custom", "format": "{#90}──────────────────────────────────────────" },
+
+        { "type": "os",       "key": "\uf30a OS ",  "format": "{name} {version-id}" },
+        { "type": "command",  "key": "◇  \uf17c ",   "text": "uname -r | cut -d- -f1" },
+        { "type": "packages", "key": "◇  󰏖 ",        "format": "{flatpak-all} ({#93}flatpak{#}), {rpm} ({#93}rpm{#})" },
+        { "type": "de",       "key": "◇  \uf108 " },
+        { "type": "wm",       "key": "◇  \uf2d2 " },
+        { "type": "shell",    "key": "◇  \uf489 " },
+        { "type": "terminal", "key": "◇  \ue795 " },
+
+        { "type": "custom", "format": "{#90}──────────────────────────────────────────" },
+
+        { "type": "host",   "key": "\udb80\udf22 PC " },
+        { "type": "cpu",    "key": "◇  󰻠 ",      "format": "{name} ({#93}{cores-logical}{#}) @ {freq-max}" },
+        { "type": "gpu",    "key": "◇  \udb80\udf5b ",      "hideType": "integrated" },
+        { "type": "memory", "key": "◇  󰑭 " },
+        { "type": "disk",   "key": "◇  \uf0a0 ", "format": "{size-used} / {size-total} ({size-percentage})" },
+        { "type": "uptime", "key": "◇  󰅐 " },
+
+        { "type": "custom", "format": "{#90}──────────────────────────────────────────" },
+        { "type": "custom", "format": "{#90}[\u001b[38;2;20;32;33m▪\u001b[38;2;24;38;39m▪\u001b[38;2;28;44;45m▪\u001b[38;2;33;50;51m▪\u001b[38;2;37;56;57m▪\u001b[38;2;41;62;64m▪\u001b[38;2;45;68;70m▪\u001b[38;2;50;74;76m▪\u001b[38;2;54;80;82m▪\u001b[38;2;58;87;88m▪\u001b[38;2;62;93;94m▪\u001b[38;2;67;99;100m▪\u001b[38;2;71;105;106m▪\u001b[38;2;75;111;113m▪\u001b[38;2;79;117;119m▪\u001b[38;2;84;123;125m▪\u001b[38;2;88;129;131m▪\u001b[38;2;92;135;137m▪\u001b[38;2;96;141;143m▪\u001b[38;2;101;147;149m▪\u001b[38;2;105;153;155m▪\u001b[38;2;109;159;162m▪\u001b[38;2;113;165;168m▪\u001b[38;2;118;171;174m▪\u001b[38;2;122;177;180m▪\u001b[38;2;126;184;186m▪\u001b[38;2;130;190;192m▪\u001b[38;2;135;196;198m▪\u001b[38;2;139;202;204m▪\u001b[38;2;143;208;211m▪\u001b[38;2;147;214;217m▪\u001b[38;2;152;220;223m▪\u001b[38;2;156;226;229m▪\u001b[38;2;160;232;235m▪{#90}]{#} \u001b[38;2;160;232;235m✓\u001b[0m" }
+    ]
+}
