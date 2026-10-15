@@ -18,4 +18,14 @@ vim.pack.add({
   'https://github.com/nvim-telescope/telescope.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/mason-org/mason.nvim',
+  'https://github.com/goolord/alpha-nvim',
+  'https://github.com/nvim-tree/nvim-web-devicons',
+  'https://github.com/nvim-tree/nvim-tree.lua'
 })
+
+require('plugins.treesitter')
+require('plugins.telescope')
+require('plugins.lsp')
+require('plugins.theme')
+require('plugins.nvim-tree')
+require('plugins.alpha')
