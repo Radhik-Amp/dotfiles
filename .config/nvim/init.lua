@@ -111,6 +111,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
+vim.keymap.set('i', '<Tab>', function()
+  if vim.fn.pumvisible() == 1 then
+    -- nothing highlighted yet: pick the first item and accept it
+    if vim.fn.complete_info({ 'selected' }).selected == -1 then
+      return '<C-n><C-y>'
+    end
+    -- an item is highlighted: accept it
+    return '<C-y>'
+  elseif vim.snippet.active({ direction = 1 }) then
+    -- inside a snippet: jump to the next placeholder
+    return '<Cmd>lua vim.snippet.jump(1)<CR>'
+  end
+  -- no menu, no snippet: normal Tab
+  return '<Tab>'
+end, { expr = true, desc = 'Accept completion or Tab' })
 
 -------------------------------------------------------------
 -- Theme
