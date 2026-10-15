@@ -1,11 +1,8 @@
 vim.cmd([[
-    set nocompatible    " V improved
     set number    " Sets line number
-
     set tabstop=4
     set shiftwidth=4
     set expandtab   " Convert tab to desired amount of space  
-
     set completeopt=menu,menuone,noselect,popup
 ]])
 
@@ -31,6 +28,16 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Telescope
 ------------------------------------------------------------
 local builtin = require('telescope.builtin')
+require("telescope").setup({
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+  },
+  defaults = {
+    file_ignore_patterns = { "%.git/" },  -- keeps .git folders out of results
+  },
+})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep,  { desc = 'Search text' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers,    { desc = 'Open buffers' })
@@ -39,11 +46,6 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags,  { desc = 'Help' })
 --------------------------------------------------------------
 -- LSP
 --------------------------------------------------------------
--- Needs these in your vim.pack.add list:
---   'https://github.com/neovim/nvim-lspconfig'  -- server configs
---   'https://github.com/mason-org/mason.nvim'   -- server installer
--- Install servers once with: :MasonInstall lua-language-server pyright ruff
- 
 require('mason').setup()
  
 -- Show diagnostics inline (off by default since Neovim 0.11)
@@ -52,14 +54,14 @@ vim.diagnostic.config({
   severity_sort = true,
 })
  
--- Per-server settings: must come BEFORE vim.lsp.enable
+
 vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       runtime = { version = 'LuaJIT' },
       workspace = {
         checkThirdParty = false,
-        library = { vim.env.VIMRUNTIME }, -- so `vim.*` is recognized in your config
+        library = { vim.env.VIMRUNTIME },
       },
     },
   },
@@ -77,8 +79,12 @@ vim.lsp.config('ruff', {
   },
 })
 
+vim.lsp.config('qmlls', {
+  filetypes = { 'qml' },
+})
+
 vim.lsp.enable({ 'lua_ls', 'pyright', 'ruff', 'qmlls' })
- 
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('user-lsp-attach', { clear = true }),
   callback = function(ev)
@@ -110,10 +116,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- Theme
 -------------------------------------------------------------
 vim.o.termguicolors = false
+local function popup_hl()
+  vim.api.nvim_set_hl(0, 'Pmenu',       { ctermbg = 0, ctermfg = 7 })
+  vim.api.nvim_set_hl(0, 'PmenuSel',    { ctermbg = 8, ctermfg = 15 })
+  vim.api.nvim_set_hl(0, 'PmenuSbar',   { ctermbg = 0 })
+  vim.api.nvim_set_hl(0, 'PmenuThumb',  { ctermbg = 8 })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = 0, ctermfg = 7 })
+end
+vim.api.nvim_create_autocmd('ColorScheme', { callback = popup_hl })
+popup_hl()
 
---- Darker popup menus (numbers are your terminal's 16 colors: 0 = black, 8 = gray, 7/15 = white)
-vim.api.nvim_set_hl(0, 'Pmenu',      { ctermbg = 0, ctermfg = 7 })   -- the menu
-vim.api.nvim_set_hl(0, 'PmenuSel',   { ctermbg = 8, ctermfg = 15 })  -- the highlighted item
-vim.api.nvim_set_hl(0, 'PmenuSbar',  { ctermbg = 0 })                -- scrollbar track
-vim.api.nvim_set_hl(0, 'PmenuThumb', { ctermbg = 8 })                -- scrollbar handle
-vim.api.nvim_set_hl(0, 'NormalFloat', { ctermbg = 0, ctermfg = 7 })  -- docs popup next to the menu
