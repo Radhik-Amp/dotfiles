@@ -6,6 +6,11 @@ vim.cmd([[
     set completeopt=menu,menuone,noselect,popup
 ]])
 
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+  command = "checktime",
+})
+
 -- Plugins
 vim.g.mapleader = ' '
 

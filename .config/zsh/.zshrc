@@ -1,6 +1,7 @@
 #PATHS
 export PATH="$HOME/.cargo/bin:$PATH"   
 export PATH="$HOME/go/bin:$PATH"
+export PATH="/home/radhik/.local/bin:$PATH"
 
 # Aliases
 [ -f "$ZDOTDIR/aliases.zsh" ] && source "$ZDOTDIR/aliases.zsh"
