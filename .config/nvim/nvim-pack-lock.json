@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "adwaita.nvim": {
+      "rev": "c607954f7b2cf56b24e921db0dab4749f3430a22",
+      "src": "https://github.com/Mofiqul/adwaita.nvim"
+    },
     "alpha-nvim": {
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim"
