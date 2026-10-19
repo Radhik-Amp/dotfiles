@@ -11,16 +11,17 @@
     "display": {
         "separator": " ",
         "color": {
-            "keys": "white"
+            "keys": "38;2;200;200;200",
+            "output": "38;2;200;200;200"
         },
         "size": {
             "ndigits": 1
         },
         "percent": {
             "color": {
-                "green": "93",
-                "yellow": "93",
-                "red": "91"
+                "green": "38;2;110;110;110",
+                "yellow": "38;2;110;110;110",
+                "red": "38;2;230;80;80"
             }
         }
     },
@@ -30,19 +31,19 @@
 
         { "type": "os",       "key": "\uf30a OS ",  "format": "{name} {version-id}" },
         { "type": "command",  "key": "◇  \uf17c ",   "text": "uname -r | cut -d- -f1" },
-        { "type": "packages", "key": "◇  󰏖 ",        "format": "{flatpak-all} ({#93}flatpak{#}), {rpm} ({#93}rpm{#})" },
+        { "type": "packages", "key": "◇  󰏖 ",        "format": "{flatpak-all} {#38;2;110;110;110}(flatpak){#38;2;200;200;200}, {rpm} {#38;2;110;110;110}(rpm){#38;2;200;200;200}" },
         { "type": "de",       "key": "◇  \uf108 " },
-        { "type": "wm",       "key": "◇  \uf2d2 " },
+        { "type": "wm",       "key": "◇  \uf2d2 ", "format": "{pretty-name} {#38;2;110;110;110}({protocol-name}){#38;2;200;200;200}" },
         { "type": "shell",    "key": "◇  \uf489 " },
         { "type": "terminal", "key": "◇  \ue795 " },
 
         { "type": "custom", "format": "{#90}──────────────────────────────────────────" },
 
         { "type": "host",   "key": "\udb80\udf22 PC " },
-        { "type": "cpu",    "key": "◇  󰻠 ",      "format": "{name} ({#93}{cores-logical}{#}) @ {freq-max}" },
+        { "type": "cpu",    "key": "◇  󰻠 ",      "format": "{name} {#38;2;110;110;110}({cores-logical}){#38;2;200;200;200} @ {freq-max}" },
         { "type": "gpu",    "key": "◇  \udb80\udf5b ",      "hideType": "integrated" },
-        { "type": "memory", "key": "◇  󰑭 " },
-        { "type": "disk",   "key": "◇  \uf0a0 ", "format": "{size-used} / {size-total} ({size-percentage})" },
+        { "type": "memory", "key": "◇  󰑭 ", "format": "{used} / {total} {#38;2;110;110;110}({percentage}{#38;2;110;110;110}){#38;2;200;200;200}" },
+        { "type": "disk",   "key": "◇  \uf0a0 ", "format": "{size-used} / {size-total} {#38;2;110;110;110}({size-percentage}{#38;2;110;110;110}){#38;2;200;200;200}" },
         { "type": "uptime", "key": "◇  󰅐 " },
 
         { "type": "custom", "format": "{#90}──────────────────────────────────────────" },
