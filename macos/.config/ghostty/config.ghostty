@@ -1,0 +1,15 @@
+
+#WINDOW 
+theme = Gruvbox Dark
+background-opacity = 1
+background-blur = true 
+window-padding-x = 10
+window-padding-y = 10
+window-colorspace = "display-p3"
+
+#FONTS
+font-family = "MesloLGM NF"
+font-size = 14
+
+#Keybinds
+keybind = cmd+shift+,=reload_config
