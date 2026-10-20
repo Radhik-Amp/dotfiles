@@ -1,10 +1,14 @@
-#PATHS
-export PATH="$HOME/.cargo/bin:$PATH"   
-export PATH="$HOME/go/bin:$PATH"
-export PATH="/home/radhik/.local/bin:$PATH"
+# PATHS
+typeset -U path            # drop duplicate PATH entries
+path=(
+  $HOME/.local/bin
+  $HOME/go/bin
+  $HOME/.cargo/bin
+  $path
+)
 
 # Aliases
-[ -f "$ZDOTDIR/aliases.zsh" ] && source "$ZDOTDIR/aliases.zsh"
+[[ -f "$ZDOTDIR/aliases.zsh" ]] && source "$ZDOTDIR/aliases.zsh"
 
 # History
 mkdir -p "$XDG_STATE_HOME/zsh"
@@ -26,6 +30,7 @@ setopt dot_glob
 setopt extended_glob
 
 # Completion
+mkdir -p "$XDG_CACHE_HOME/zsh"
 zmodload -i zsh/complist
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
@@ -33,9 +38,25 @@ compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
 # Completion Options
 zstyle ':completion:*' menu select
 
+# fzf key bindings and fuzzy completion
+command -v fzf >/dev/null && source <(fzf --zsh)
 
-# Set up fzf key bindings and fuzzy completion
-source <(fzf --zsh)
+# Prompt (oh-my-posh)
+if command -v oh-my-posh >/dev/null; then
+    eval "$(oh-my-posh init zsh --config "$HOMEBREW_PREFIX/opt/oh-my-posh/themes/gruvbox.omp.json")"
+fi
 
-# Prompt configuration using oh-my-posh
-eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/pararussel-revised.json)"
+# ls
+if [[ "$OSTYPE" == darwin* ]]; then
+  # macOS ls has no --hyperlink; use GNU ls from `brew install coreutils` if present
+  if command -v gls >/dev/null; then
+    alias ls='gls --hyperlink=auto --color=auto'
+  else
+    alias ls='ls -G'
+  fi
+else
+  alias ls='ls --hyperlink=auto --color=auto'
+fi
+
+# Terminal-specific
+# kitty (Fedora) / Ghostty (macOS)
