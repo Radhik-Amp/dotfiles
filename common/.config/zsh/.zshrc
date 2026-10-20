@@ -43,7 +43,11 @@ command -v fzf >/dev/null && source <(fzf --zsh)
 
 # Prompt (oh-my-posh)
 if command -v oh-my-posh >/dev/null; then
+  if [[ "$OSTYPE" == darwin* ]]; then
     eval "$(oh-my-posh init zsh --config "$HOMEBREW_PREFIX/opt/oh-my-posh/themes/gruvbox.omp.json")"
+  else
+    eval "$(oh-my-posh init zsh --config "$XDG_CONFIG_HOME/ohmyposh/pararussel-revised.json")"
+  fi
 fi
 
 # ls
