@@ -32,6 +32,7 @@
         { "type": "os",       "key": "\uf30a OS ",  "format": "{name} {version-id}" },
         { "type": "command",  "key": "◇  \uf17c ",   "text": "uname -r | cut -d- -f1" },
         { "type": "packages", "key": "◇  󰏖 ",        "format": "{flatpak-all} {#38;2;110;110;110}(flatpak){#38;2;200;200;200}, {rpm} {#38;2;110;110;110}(rpm){#38;2;200;200;200}" },
+//        { "type": "command", "key": " ◇ \uf487 ", "text": "rpm -qa --qf '%{VENDOR}\\n' | grep -cx Terra", "format": "{result} {#38;2;110;110;110}(terra){#38;2;200;200;200}" },
         { "type": "de",       "key": "◇  \uf108 " },
         { "type": "wm",       "key": "◇  \uf2d2 ", "format": "{pretty-name} {#38;2;110;110;110}({protocol-name}){#38;2;200;200;200}" },
         { "type": "shell",    "key": "◇  \uf489 " },
