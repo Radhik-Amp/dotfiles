@@ -21,7 +21,8 @@ vim.pack.add({
   'https://github.com/goolord/alpha-nvim',
   'https://github.com/nvim-tree/nvim-web-devicons',
   'https://github.com/nvim-tree/nvim-tree.lua',
-  'https://github.com/Mofiqul/adwaita.nvim'
+  'https://github.com/Mofiqul/adwaita.nvim',
+  'https://github.com/ellisonleao/gruvbox.nvim'
 })
 
 require('plugins.treesitter')
@@ -30,4 +31,4 @@ require('plugins.lsp')
 require('plugins.theme')
 require('plugins.nvim-tree')
 require('plugins.alpha')
-require('plugins.adwaita')
+require('plugins.theme')
