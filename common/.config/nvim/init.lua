@@ -1,5 +1,6 @@
 vim.cmd([[
     set number    " Sets line number
+    set relativenumber
     set tabstop=4
     set shiftwidth=4
     set expandtab   " Convert tab to desired amount of space  

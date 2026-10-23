@@ -8,6 +8,10 @@
       "rev": "4ba26e41990c11620c96c0e1cff20eab65efde4a",
       "src": "https://github.com/goolord/alpha-nvim"
     },
+    "base16-nvim": {
+      "rev": "7183774e90841f4bd27a47cb6e75cf532fd1192d",
+      "src": "https://github.com/RRethy/base16-nvim"
+    },
     "black-metal-theme-neovim": {
       "rev": "5d61bbd0ec3471c27168431dd2986cc77e28c848",
       "src": "https://github.com/metalelf0/black-metal-theme-neovim"

@@ -22,7 +22,8 @@ vim.pack.add({
   'https://github.com/nvim-tree/nvim-web-devicons',
   'https://github.com/nvim-tree/nvim-tree.lua',
   'https://github.com/Mofiqul/adwaita.nvim',
-  'https://github.com/ellisonleao/gruvbox.nvim'
+  'https://github.com/ellisonleao/gruvbox.nvim',
+  "https://github.com/RRethy/base16-nvim"
 })
 
 require('plugins.treesitter')
