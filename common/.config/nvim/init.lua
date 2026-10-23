@@ -7,6 +7,8 @@ vim.cmd([[
     set completeopt=menu,menuone,noselect,popup
 ]])
 
+vim.o.statuscolumn = "%s%=%{v:virtnum > 0 ? '' : (&nu || &rnu ? (v:relnum ? v:relnum : v:lnum) : '')} "
+
 vim.opt.autoread = true
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
   command = "checktime",
