@@ -57,6 +57,9 @@ zstyle ':completion:*' menu select
 # fzf key bindings and fuzzy completion
 command -v fzf >/dev/null && source <(fzf --zsh)
 
+# zoxide - better 'cd' command
+eval "$(zoxide init zsh --cmd cd)"
+
 # Prompt (oh-my-posh)
 if command -v oh-my-posh >/dev/null; then
   if [[ "$OSTYPE" == darwin* ]]; then
