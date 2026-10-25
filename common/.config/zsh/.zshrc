@@ -29,6 +29,22 @@ setopt NUMERIC_GLOB_SORT
 setopt dot_glob
 setopt extended_glob
 
+# Vi Mode Cursor
+# zsh is in vi mode because EDITOR=nvim; block in normal mode, bar in insert mode
+_cursor_keymap_select() {
+  if [[ $KEYMAP == vicmd ]]; then
+    print -n '\e[2 q'   # block
+  else
+    print -n '\e[6 q'   # bar
+  fi
+}
+_cursor_line_init() { print -n '\e[6 q' }   # every new prompt starts in insert mode
+
+autoload -Uz add-zle-hook-widget   # chains with oh-my-posh's widgets instead of replacing them
+add-zle-hook-widget keymap-select _cursor_keymap_select
+add-zle-hook-widget line-init _cursor_line_init
+KEYTIMEOUT=1   # switch to normal mode without a lag after Esc
+
 # Completion
 mkdir -p "$XDG_CACHE_HOME/zsh"
 zmodload -i zsh/complist
