@@ -34,10 +34,6 @@ vim.lsp.config('ruff', {
   },
 })
 
-vim.lsp.config('qmlls', {
-  filetypes = { 'qml' },
-})
-
 vim.lsp.enable({ 'lua_ls', 'pyright', 'ruff', 'qmlls' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
