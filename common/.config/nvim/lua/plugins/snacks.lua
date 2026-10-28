@@ -43,7 +43,7 @@ require('snacks').setup({
   },
 })
 
--- Keep the header dim like before; re-applied because :colorscheme clears it
+-- Keep the header dim  because :colorscheme clears it
 vim.api.nvim_create_autocmd('ColorScheme', {
   callback = function() vim.api.nvim_set_hl(0, 'SnacksDashboardHeader', { link = 'Comment' }) end,
 })

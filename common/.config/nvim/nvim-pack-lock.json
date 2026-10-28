@@ -12,6 +12,11 @@
       "rev": "5d61bbd0ec3471c27168431dd2986cc77e28c848",
       "src": "https://github.com/metalelf0/black-metal-theme-neovim"
     },
+    "blink.cmp": {
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
     "gruvbox.nvim": {
       "rev": "154eb5ff5b96d0641307113fa385eaf0d36d9796",
       "src": "https://github.com/ellisonleao/gruvbox.nvim"
