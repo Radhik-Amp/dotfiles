@@ -14,7 +14,10 @@ vim.lsp.config('lua_ls', {
       runtime = { version = 'LuaJIT' },
       workspace = {
         checkThirdParty = false,
-        library = { vim.env.VIMRUNTIME },
+        library = {
+          vim.env.VIMRUNTIME,
+          vim.fn.stdpath('data') .. '/site/pack/core/opt/snacks.nvim',
+        },
       },
     },
   },

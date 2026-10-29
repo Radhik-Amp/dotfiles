@@ -20,6 +20,7 @@ vim.pack.add({
   'https://github.com/folke/snacks.nvim',
   'https://github.com/catgoose/nvim-colorizer.lua',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
+  'https://github.com/nvim-lualine/lualine.nvim' 
 })
 
 require('plugins.snacks')
@@ -28,3 +29,4 @@ require('plugins.blink')
 require('plugins.lsp')
 require('plugins.theme')
 require('plugins.colorizer')
+require('plugins.lualine')
