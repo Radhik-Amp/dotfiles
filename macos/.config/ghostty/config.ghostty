@@ -1,5 +1,5 @@
 
-#WINDOW 
+# Window 
 theme = Gruvbox Dark
 background-opacity = 1
 background-blur = true 
@@ -7,9 +7,43 @@ window-padding-x = 10
 window-padding-y = 10
 window-colorspace = "display-p3"
 
-#FONTS
+# Fonts
 font-family = "MesloLGM NF"
 font-size = 14
 
-#Keybinds
-keybind = cmd+shift+,=reload_config
+# Keybinds
+
+# Reload config (like `bind r source-file ~/.tmux.conf`)
+keybind = ctrl+s>r=reload_config
+
+# Split navigation (like your hjkl select-pane binds)
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>j=goto_split:down
+keybind = ctrl+s>k=goto_split:up
+keybind = ctrl+s>l=goto_split:right
+
+# Splits (tmux defaults: % and ")
+keybind = ctrl+s>shift+5=new_split:right
+keybind = ctrl+s>shift+apostrophe=new_split:down
+keybind = ctrl+s>z=toggle_split_zoom
+keybind = ctrl+s>x=close_surface
+
+# Tabs (tmux windows: c, n, p, 1-9)
+keybind = ctrl+s>c=new_tab
+keybind = ctrl+s>n=next_tab
+keybind = ctrl+s>p=previous_tab
+keybind = ctrl+s>1=goto_tab:1
+keybind = ctrl+s>2=goto_tab:2
+keybind = ctrl+s>3=goto_tab:3
+keybind = ctrl+s>4=goto_tab:4
+keybind = ctrl+s>5=goto_tab:5
+keybind = ctrl+s>6=goto_tab:6
+keybind = ctrl+s>7=goto_tab:7
+keybind = ctrl+s>8=goto_tab:8
+keybind = ctrl+s>9=goto_tab:9
+
+# Press ctrl+s twice to send a literal ctrl+s to the shell/app
+keybind = ctrl+s>ctrl+s=text:\x13
+
+# Mouse (closest analog to `set -g mouse on`)
+focus-follows-mouse = true
