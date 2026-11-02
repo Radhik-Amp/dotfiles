@@ -11,6 +11,9 @@ window-colorspace = "display-p3"
 font-family = "MesloLGM NF"
 font-size = 14
 
+# Shaders
+custom-shader = ~/dotfiles/macos/.config/ghostty/shaders/cursor_smear.glsl
+
 # Keybinds
 
 # Reload config (like `bind r source-file ~/.tmux.conf`)
