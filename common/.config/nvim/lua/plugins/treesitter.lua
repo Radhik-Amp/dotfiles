@@ -1,7 +1,7 @@
 ------------------------------------------------------------
 -- Treesitter
 ------------------------------------------------------------
-require('nvim-treesitter').install({ 'python', 'javascript', 'bash', 'json' })
+require('nvim-treesitter').install({ 'python', 'javascript', 'bash', 'json', 'markdown', 'markdown_inline' })
 
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
