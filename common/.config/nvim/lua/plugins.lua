@@ -6,6 +6,11 @@ vim.api.nvim_create_autocmd('PackChanged', {
       if not ev.data.active then vim.cmd.packadd('nvim-treesitter') end
       vim.cmd('TSUpdate')
     end
+    -- markdown-preview.nvim ships a node app; fetch its prebuilt binary
+    if name == 'markdown-preview.nvim' and (kind == 'install' or kind == 'update') then
+      if not ev.data.active then vim.cmd.packadd('markdown-preview.nvim') end
+      vim.fn['mkdp#util#install']()
+    end
   end,
 })
 
@@ -22,6 +27,7 @@ vim.pack.add({
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
   'https://github.com/nvim-lualine/lualine.nvim',
   'https://github.com/OXY2DEV/markview.nvim',
+  'https://github.com/iamcco/markdown-preview.nvim',
 })
 
 require('plugins.snacks')
@@ -32,3 +38,4 @@ require('plugins.theme')
 require('plugins.colorizer')
 require('plugins.lualine')
 require('plugins.markview')
+require('plugins.markdown-preview')
